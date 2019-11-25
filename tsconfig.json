@@ -1,0 +1,17 @@
+{
+    "compilerOptions": {
+        "module": "commonjs",
+        "rootDir": "",
+        "outDir": "dist",
+        "target": "esnext",
+        "strict": true,
+        "noImplicitAny": true,
+        "experimentalDecorators": true,
+        "emitDecoratorMetadata": true
+    },
+    "include": [
+        "plugins/**/*",
+        "services/**/*",
+        "app.ts"
+    ]
+}
