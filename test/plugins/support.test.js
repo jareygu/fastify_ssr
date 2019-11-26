@@ -2,7 +2,7 @@
 
 const { test } = require('tap')
 const Fastify = require('fastify')
-const Support = require('../../plugins/support')
+const Support = require('../../dist/plugins/support')
 
 test('support works standalone', (t) => {
   t.plan(2)
