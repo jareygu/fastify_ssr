@@ -1,9 +1,9 @@
 'use strict'
 
-import * as path from 'path'
-import * as AutoLoad from 'fastify-autoload'
+const path = require('path')
+const AutoLoad = require('fastify-autoload')
 
-module.exports = function (fastify: any, opts: any, next: any) {
+module.exports = function (fastify, opts, next) {
   // Place here your custom code!
 
   // Do not touch the following lines
@@ -19,7 +19,7 @@ module.exports = function (fastify: any, opts: any, next: any) {
   // This loads all plugins defined in services
   // define your routes in one of these
   fastify.register(AutoLoad, {
-    dir: path.join(__dirname, 'services'),
+    dir: path.join(__dirname, 'routes'),
     options: Object.assign({}, opts)
   })
 

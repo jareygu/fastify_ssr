@@ -1,4 +1,4 @@
-# typescipt版 fastify-cli
+# 基于 fastify-cli 的 node 前台框架
 
 **fastify 是基于 Node.js Web 框架**  [github](https://github.com/fastify/fastify)
 
@@ -8,7 +8,6 @@
 
 ## 项目运行
 
-编译成js后
 ```
 yarn start
 ```
