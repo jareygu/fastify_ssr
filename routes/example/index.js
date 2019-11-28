@@ -4,7 +4,7 @@ const path = require('path')
 
 module.exports = async function (fastify, opts) {
   fastify.get('/example', async function (request, reply) {
-    let html = fs.readFileSync(path.resolve(__dirname,'../../assets/example.html'))
+    let html = fs.readFileSync(path.resolve(__dirname,'../../views/example.html'))
     reply.header('Content-Type', 'text/html')
       .send(html)
   })
