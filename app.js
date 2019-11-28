@@ -2,27 +2,26 @@
 
 const path = require('path')
 const AutoLoad = require('fastify-autoload')
+const ServeStatic = require('fastify-static')
 
 module.exports = function (fastify, opts, next) {
-  // Place here your custom code!
 
-  // Do not touch the following lines
+  // 引入静态资源
+  fastify.register(ServeStatic, {
+    root: path.join(process.cwd(), 'assets')
+  })
 
-  // This loads all plugins defined in plugins
-  // those should be support plugins that are reused
-  // through your application
+
+  // 注册插件和路由
   fastify.register(AutoLoad, {
-    dir: path.join(__dirname, 'plugins'),
+    dir: path.join(process.cwd(), 'plugins'),
     options: Object.assign({}, opts)
   })
 
-  // This loads all plugins defined in services
-  // define your routes in one of these
   fastify.register(AutoLoad, {
-    dir: path.join(__dirname, 'routes'),
+    dir: path.join(process.cwd(), 'routes'),
     options: Object.assign({}, opts)
   })
 
-  // Make sure to call next when done
   next()
 }
