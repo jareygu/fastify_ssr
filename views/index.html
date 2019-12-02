@@ -1,13 +1,161 @@
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="/css/main.css">
-    <title>index</title>
+    <style type="text/css">
+        .hot a {
+            padding-left: 5px;
+        }
+
+        .tabs {
+            font-size: 16px;
+        }
+
+        .tabs div {
+            padding-left: 17px;
+            padding-right: 35px;
+        }
+
+        #vip {
+            background-color: mediumslateblue;
+            color: #fff;
+            padding-left: 5px;
+            padding-right: 5px;
+        }
+
+        .news {
+            height: 40%;
+            border-bottom: 1px solid rgb(160, 152, 152);
+            width: 1200px;
+            margin-left: 5%;
+            padding-bottom: 30px;
+        }
+
+        .affairs {
+            height: 33%;
+            border-bottom: 1px solid rgb(160, 152, 152);
+            width: 1200px;
+            margin-left: 5%;
+        }
+
+        .service {
+            height: 30%;
+            width: 1200px;
+            margin-left: 5%;
+        }
+
+        .news-list li {
+            margin-top: 22px;
+            font-size: 14px;
+        }
+
+        .affairs-content {
+            background-color: rgb(227, 228, 252);
+            height: 77%;
+            width: 70%;
+            margin-top: 10px;
+            display: flex;
+        }
+
+        .affairs-list {
+            margin-top: 0px;
+        }
+
+        .affairs-list li {
+            margin-top: 15px;
+            margin-bottom: 15px;
+            font-size: 14px;
+        }
+    </style>
+    <title><%= title %></title>
 </head>
+
 <body>
-    <p id="h">这是首页</p>
-    <script src="/js/main.js"></script>
+    <div class="top" style="height: 22%">
+        <div class="search-box" style="height: 10%;width: 30%;position: absolute;right: 50px;top:30px;">
+            <div id="search" style="position:absolute;height: 35px;width: 300px;">
+                <input type="text" style="position:relative;height: 35px;width: 300px;">
+                <i style="position:absolute;padding: 3px;right: 3px;">搜</i>
+                <div class="hot" style="display:flex;padding: 5px;font-size: 15px;">
+                    <span>热搜：</span>
+                    <a>化工</a>
+                    <a>消防</a>
+                    <a>安检</a>
+                </div>
+            </div>
+        </div>
+        <div class="tabs"
+            style="height: 4%;position:absolute;top: 15%;border-bottom:1px solid rgb(160, 152, 152);display: flex;width: 1200px;margin-left: 5%;">
+            <div>网站首页</div>
+            <div>政务咨询</div>
+            <div>公共查询</div>
+            <div>在线业务</div>
+            <div>安全宣教</div>
+            <div>互动交流</div>
+            <div>应用中心</div>
+            <div>园区概览</div>
+            <div id="vip" style="position: absolute;right: 0;">会员中心</div>
+        </div>
+    </div>
+    <div class="content">
+        <div class="news">
+            <div class="pictures" style="height: 100%;width: 58%;float:left;background-color: bisque;"></div>
+            <div class="news-update" style="height: 100%;width: 40%;float:right;">
+                <div style="height: 10%;width: 100%;background-color:rgb(227, 228, 252);display: flex;">
+                    <div style="margin-left: 10px;color: blue;">新闻资讯</div>
+                    <div style="margin-left: 5px;color:mediumturquoise;font-size: 13px;margin-top: 9px;">News update
+                    </div>
+                </div>
+                <div style="height: 90%;width: 100%;">
+                    <ul class="news-list" style="margin-top: 30px;">
+                        <li>新闻新闻新闻新闻新闻新闻新闻新闻</li>
+                        <li>新闻新闻新闻新闻新闻</li>
+                        <li>新闻新闻新闻新闻新闻新闻新闻新闻新闻新闻新闻</li>
+                        <li>新闻新闻新闻新闻新闻新闻新闻</li>
+                        <li>新闻新闻新闻新闻新闻新闻新闻新闻新闻</li>
+                        <li>新闻新闻新闻新闻新闻新闻新闻新闻</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="affairs">
+            <div style="height: 10%;width: 100%;text-align: left;display: flex;margin-top: 5px;">
+                <div style="margin-left: 10px;color: blue;">政务公开</div>
+                <div style="margin-left: 5px;color:mediumturquoise;font-size: 13px;margin-top: 9px;">Government affairs
+                </div>
+            </div>
+
+            <div>
+                <div class="affairs-content">
+                    <div class="affairs-list-content" style="width: 60%;">
+                        <ul class="affairs-list">
+                            <li>新闻新闻新闻新闻新闻新闻新闻新闻</li>
+                            <li>新闻新闻新闻新闻新闻</li>
+                            <li>新闻新闻新闻新闻新闻新闻新闻新闻新闻新闻新闻</li>
+                            <li>新闻新闻新闻新闻新闻新闻新闻</li>
+                            <li>新闻新闻新闻新闻新闻新闻新闻新闻新闻</li>
+                        </ul>
+                    </div>
+                    <div style="width: 40%;height: auto;margin: 20px;position:relative;">
+                        <div style="background-color:#fff;position:absolute; left:0;height: 45%;width: 47%;"></div>
+                        <div style="background-color: #fff;position:absolute; right:0;height: 45%;width: 47%;"></div>
+                        <div style="background-color: #fff;position:absolute; left:0;bottom:0;height: 45%;width: 47%;">
+                        </div>
+                        <div style="background-color: #fff;position:absolute; right:0;bottom:0;height: 45%;width: 47%;">
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        <div class="service"></div>
+    </div>
+    <div class="bottom"></div>
+
 </body>
+
 </html>
