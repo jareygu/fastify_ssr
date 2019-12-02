@@ -12,11 +12,10 @@ module.exports = async function (fastify, opts) {
       path.resolve(__dirname, '../views/index.html'),
       {
         title: 'ejs-index',
-        data: '这是ejs首页'
+        news: ['新闻新闻', '新闻新闻', '新闻新闻', '新闻新闻', '新闻新闻']
       })
     reply.header('Content-Type', 'text/html')
       .send(html)
-
   }
   fastify.get('/', index)
   fastify.get('/index', index)

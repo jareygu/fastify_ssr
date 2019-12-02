@@ -11,12 +11,12 @@
         }
 
         .tabs {
-            font-size: 16px;
+            font-size: 20px;
         }
 
         .tabs div {
-            padding-left: 17px;
-            padding-right: 35px;
+            padding-left: 20px;
+            padding-right: 40px;
         }
 
         #vip {
@@ -29,22 +29,28 @@
         .news {
             height: 40%;
             border-bottom: 1px solid rgb(160, 152, 152);
-            width: 1200px;
-            margin-left: 5%;
             padding-bottom: 30px;
+            width: 1800px;
+            margin-left:50%;
+            position: relative;
+            right: 900px;
         }
 
         .affairs {
             height: 33%;
             border-bottom: 1px solid rgb(160, 152, 152);
-            width: 1200px;
-            margin-left: 5%;
+            width: 1800px;
+            position: relative;
+            margin-left:50%;
+            right: 900px;
         }
 
         .service {
             height: 30%;
-            width: 1200px;
-            margin-left: 5%;
+            width: 1800px;
+            margin-left:50%;
+            position: relative;
+            right: 900px;
         }
 
         .news-list li {
@@ -55,9 +61,10 @@
         .affairs-content {
             background-color: rgb(227, 228, 252);
             height: 77%;
-            width: 70%;
+            width: 80%;
             margin-top: 10px;
             display: flex;
+            float: left;
         }
 
         .affairs-list {
@@ -75,7 +82,7 @@
 
 <body>
     <div class="top" style="height: 22%">
-        <div class="search-box" style="height: 10%;width: 30%;position: absolute;right: 50px;top:30px;">
+        <div class="search-box" style="height: 10%;width: 30%;float: right;margin-top:50px;">
             <div id="search" style="position:absolute;height: 35px;width: 300px;">
                 <input type="text" style="position:relative;height: 35px;width: 300px;">
                 <i style="position:absolute;padding: 3px;right: 3px;">搜</i>
@@ -88,7 +95,7 @@
             </div>
         </div>
         <div class="tabs"
-            style="height: 4%;position:absolute;top: 15%;border-bottom:1px solid rgb(160, 152, 152);display: flex;width: 1200px;margin-left: 5%;">
+            style="height: 30px;position:absolute;left: 50%;width: 1800px;margin-left: -900px;top: 15%;border-bottom:1px solid rgb(160, 152, 152);display: flex;">
             <div>网站首页</div>
             <div>政务咨询</div>
             <div>公共查询</div>
@@ -110,14 +117,18 @@
                     </div>
                 </div>
                 <div style="height: 90%;width: 100%;">
+                    <% if (news.length) { %>
                     <ul class="news-list" style="margin-top: 30px;">
-                        <li>新闻新闻新闻新闻新闻新闻新闻新闻</li>
-                        <li>新闻新闻新闻新闻新闻</li>
-                        <li>新闻新闻新闻新闻新闻新闻新闻新闻新闻新闻新闻</li>
-                        <li>新闻新闻新闻新闻新闻新闻新闻</li>
-                        <li>新闻新闻新闻新闻新闻新闻新闻新闻新闻</li>
-                        <li>新闻新闻新闻新闻新闻新闻新闻新闻</li>
+                        <% for(let i = 0; i < 6; i++){ %>
+                            <% if (news[i]) { %>
+                            <li><%= news[i] %></li>
+                            <% } %>
+                        <% } %>
                     </ul>
+                    <% } %>
+                    <% if (!news.length) { %>
+                    <p>暂无新闻</p>
+                    <% } %>
                 </div>
             </div>
         </div>
@@ -130,7 +141,7 @@
 
             <div>
                 <div class="affairs-content">
-                    <div class="affairs-list-content" style="width: 60%;">
+                    <div class="affairs-list-content" style="width: 70%;">
                         <ul class="affairs-list">
                             <li>新闻新闻新闻新闻新闻新闻新闻新闻</li>
                             <li>新闻新闻新闻新闻新闻</li>
@@ -139,14 +150,19 @@
                             <li>新闻新闻新闻新闻新闻新闻新闻新闻新闻</li>
                         </ul>
                     </div>
-                    <div style="width: 40%;height: auto;margin: 20px;position:relative;">
-                        <div style="background-color:#fff;position:absolute; left:0;height: 45%;width: 47%;"></div>
-                        <div style="background-color: #fff;position:absolute; right:0;height: 45%;width: 47%;"></div>
-                        <div style="background-color: #fff;position:absolute; left:0;bottom:0;height: 45%;width: 47%;">
+                    <div style="width: 60%;height: auto;margin: 20px;position:relative;">
+                        <div style="background-color:#fff;position:absolute; left:0;height: 45%;width: 48%;"></div>
+                        <div style="background-color: #fff;position:absolute; right:0;height: 45%;width: 48%;"></div>
+                        <div style="background-color: #fff;position:absolute; left:0;bottom:0;height: 45%;width: 48%;">
                         </div>
-                        <div style="background-color: #fff;position:absolute; right:0;bottom:0;height: 45%;width: 47%;">
+                        <div style="background-color: #fff;position:absolute; right:0;bottom:0;height: 45%;width: 48%;">
                         </div>
                     </div>
+                </div>
+                <div style="float: right;width: 18%;height: auto;margin-top: 10px">
+                    <div style="background-color: rgb(204, 178, 73);height: 23%;margin-bottom: 15px;"></div>
+                    <div style="background-color: rgb(204, 178, 73);height: 23%;margin-bottom: 15px;"></div>
+                    <div style="background-color: rgb(204, 178, 73);height: 23%;"></div>
                 </div>
 
             </div>
