@@ -1,14 +1,14 @@
 'use strict'
 
-import * as path from "path"
+import path from "path"
 import Fastify from 'fastify'
-import AutoLoad from 'fastify-autoload'
 import ServeStatic from 'fastify-static'
 import PointOfView from 'point-of-view'
-import ejsLayout from './app/layout.mjs'
-import { readFileSync } from 'fs'
+import ejsLayout from './app/layout.js'
+import * as fs from 'fs'
+import glob from 'glob'
 
-const json = readFileSync("config.json", "utf8")
+const json = fs.readFileSync("config.json", "utf8")
 const { host, port } = JSON.parse(json)
 
 const fastify = Fastify()
@@ -25,27 +25,16 @@ async function init(opts) {
     engine: {
       "ejs-mate": ejsLayout,
     },
-    options: {
-      context: {
-        test() {
-          return "TEST"
-        }
-      }
-    },
+    options: {},
     includeViewExtension: true,
     templates: path.resolve("app/views")
   });
 
-  // 注册插件和路由
-  fastify.register(AutoLoad, {
-    dir: path.join(process.cwd(), 'app/plugins'),
-    options: Object.assign({}, opts)
-  });
-
-  fastify.register(AutoLoad, {
-    dir: path.join(process.cwd(), 'app/routes'),
-    options: Object.assign({}, opts)
-  });
+  // 注册路由
+  for (let js of glob.sync("./app/routes/**/*.js")) {
+    let route = await import(js)
+    fastify.register(route.default)
+  }
 
   fastify.listen(port, host, function (err) {
     if (err) {
@@ -53,7 +42,6 @@ async function init(opts) {
       process.exit(1)
     }
     console.log(`server listening on http://${host}:${port}`)
-
   });
 }
 

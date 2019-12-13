@@ -1,10 +1,8 @@
 'use strict'
-import * as fs from "fs";
-import * as path from "path";
 
 export default async function (fastify, opts) {
   function index(request, reply) {
-    reply.view('index', {
+    reply.view('demo', {
       title: 'ejs-index',
       news: ['新闻新闻', '新闻新闻', '新闻新闻', '新闻新闻', '新闻新闻']
     })
