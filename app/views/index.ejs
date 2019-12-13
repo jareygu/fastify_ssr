@@ -1,0 +1,21 @@
+<%- layout("layout") -%>
+<%- stylesheet("/css/main.css") -%>
+<%- block("a", '<p>AAA</p>') %>
+<%- script("/js/main.js") -%>
+
+<div id="news">
+        <% if (news.length) { %>
+        <ul class="news-list" style="margin-top: 30px;">
+            <% for(let i = 0; i < 6; i++){ %>
+            <% if (news[i]) { %>
+            <li><%= news[i] %></li>
+            <% } %>
+            <% } %>
+        </ul>
+        <% } %>
+        <% if (news.length===0) { %>
+        <div>暂无新闻</div>
+        <% } %>
+    </div>
+
+<p id="p"></p>

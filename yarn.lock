@@ -1356,6 +1356,11 @@ hasha@^3.0.0:
   dependencies:
     is-stream "^1.0.1"
 
+hashlru@^2.3.0:
+  version "2.3.0"
+  resolved "https://registry.npm.taobao.org/hashlru/download/hashlru-2.3.0.tgz#5dc15928b3f6961a2056416bb3a4910216fdfb51"
+  integrity sha1-XcFZKLP2lhogVkFrs6SRAhb9+1E=
+
 help-me@^1.1.0:
   version "1.1.0"
   resolved "https://registry.npm.taobao.org/help-me/download/help-me-1.1.0.tgz#8f2d508d0600b4a456da2f086556e7e5c056a3c6"
@@ -2478,6 +2483,14 @@ plur@^1.0.0:
   version "1.0.0"
   resolved "https://registry.npm.taobao.org/plur/download/plur-1.0.0.tgz#db85c6814f5e5e5a3b49efc28d604fec62975156"
   integrity sha1-24XGgU9eXlo7Se/CjWBP7GKXUVY=
+
+point-of-view@^3.7.0:
+  version "3.7.0"
+  resolved "https://registry.npm.taobao.org/point-of-view/download/point-of-view-3.7.0.tgz#de2e69f0fd31fea9213d84667053b841fdf75620"
+  integrity sha1-3i5p8P0x/qkhPYRmcFO4Qf33ViA=
+  dependencies:
+    fastify-plugin "^1.5.0"
+    hashlru "^2.3.0"
 
 posix-character-classes@^0.1.0:
   version "0.1.1"
