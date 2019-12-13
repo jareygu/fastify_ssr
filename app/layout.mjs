@@ -1,9 +1,6 @@
-// import * as ejs from "ejs";
-// import * as fs from "fs";
-// import * as path from "path";
-const ejs = require('ejs')
-const fs = require('fs')
-const path = require('path')
+import * as ejs from "ejs";
+import * as fs from "fs";
+import * as path from "path";
 
 var exists = fs.existsSync || path.existsSync
   , resolve = path.resolve
@@ -12,7 +9,7 @@ var exists = fs.existsSync || path.existsSync
   , join = path.join
   , basename = path.basename;
 
-  module.exports = function renderFile(file, options, fn){
+export default function renderFile(file, options, fn){
 //   console.log("renderFile", file, options, fn);
   // Express used to set options.locals for us, but now we do it ourselves
   // (EJS does some __proto__ magic to expose these funcs/values in the template)
